@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Textbox Personnalisé</title>
+        <link rel="stylesheet" href="css/copypage.css">
+        <link rel="stylesheet" href="css/signature.css">
+
+    </head>
+    <body>
+        <div class="body-container">
+            <header>
+                <fieldset>
+                    <legend>ECF : TP FORMULAIRE D’ABSENCE</legend>
+
+                    <div class="header">
+                        <h1>Autorisation d'Absence</h1>
+                        <img src="img/LOGOafpa.png" width="100" height="60" alt="logo_afpa"/>
+                        <hr class="hr-header">
+                    </div>
+                </fieldset>  
+            </header>
+            <div class="flex-container">
+                <form id="myForm" method="get" action="copy.html">
+                    <fieldset>
+                        <legend>Identification:</legend>
+                        <label for="nom">Votre nom est :</label>
+                        <input type="text" id="nom-textbox" name="nom" placeholder="Votre Nom" readonly><br><br>
+                        <label for="prenom">Votre prénom est :</label>
+                        <input type="text" id="prenom-textbox" name="prenom" placeholder="Votre Prénom" readonly><br><br>
+                        <!-- Label pour la liste déroulante -->
+                        <label for="formation">Vous suivez la Formation :</label>
+                        <!-- Liste déroulante (Dropdown) -->
+                        <select id="formation" name="formation" disabled>
+                            <option value="CDA">Concepteur Développeur d'Applications</option>
+                            <option value="DWWM">DWWM</option>
+                            <option value="TSSR">TSSR</option>
+                        </select>
+                    </fieldset>
+                    <!-- Choix de Radio Buttons -->
+                    <label>
+                        <input type="radio" id="oui" name="choice" value="fieldset1" disabled> Un jour au moins---
+                    </label>
+                    <label>
+                        <input type="radio" id="non" name="choice" value="fieldset2" disabled> Plus d'un jour ----
+                    </label>
+                    <!-- Fieldsets à afficher -->
+                    <fieldset id="fieldset1">
+                        <legend>Demande de l'autorisation de s'absenter du centre</legend>
+                        <label for="datejour">Sélectionnez une date :</label>
+                        <input type="date" id="datejour" name="date" readonly><br><br>
+                        <label for="debut-heure">De :</label>
+                        <input type="time" id="debut-heure" name="debut-heure" min="08:00" max="17:00" readonly><br><br>
+                        <label for="fin-heure">À :</label>
+                        <input type="time" id="fin-heure" name="fin-heure" min="08:00" max="17:00" readonly>
+                    </fieldset>
+                    <fieldset id="fieldset2">
+                        <legend>Demande de l'autorisation de s'absenter du centre</legend>
+                        <label for="datejourdebut">Vous serez absent du :</label>
+                        <input type="date" id="datejourdebut" name="date" readonly><br><br>
+                        <label for="datejourfin">Jusqu'au :</label>
+                        <input type="date" id="datejourfin" name="date" readonly><br><br>
+                    </fieldset>
+                    <fieldset id="liste-formulaires"></fieldset>
+                </form>
+                <aside>
+                    <fieldset class='signature'>
+                        <legend>Signature </legend>
+                        <div class="textesignature">
+
+                            <p >Cachet et signature de l'entreprise ou de </p>
+                            <p class="ptext1">entreprise / nom</p>
+                            <hr class="hrtext1">
+                            <p >Merci d'approuver votre cacher justifier de  </p>
+                            <p>l'absence de la formation  de M  </p>  <p class="ptext2">nom stagiaire</p><hr class="hrtext2">
+
+
+                            <div class="divsignature">
+                                <p class='date-signature'>Date et signature du Stagiaire</p> 
+
+                            </div>
+                        </div>
+                    </fieldset>
+                </aside>
+            </div>
+        </div>
+
+        <script src="page2js/recupformulaire.js"></script>
+    </body>
+</html>

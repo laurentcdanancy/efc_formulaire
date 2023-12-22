@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/indexpage.css">
+        <title>Textbox Personnalisé</title>
+
+    <body>
+        <fieldset>
+            <legend>ECF : TP FORMULAIRE D’ABSENCE</legend>
+            <div class="header">
+                <h1>Autorisation d'Absence</h1> <img src="img/LOGOafpa.png" width="100" height="60" alt="logo afpa"/>
+                <hr class="hr-header">
+            </div>
+        </fieldset>
+        <form id="myForm" method="get" action="copy.html" >
+            <fieldset>
+                <legend>Identification:</legend>
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom-textbox" name="nom" placeholder="Votre Nom" required><br><br>
+
+                <label for="prenom">Prenom:</label>
+                <input type="text" id="prenom-textbox" name="prenom" placeholder="Votre Prenom" required><br><br>
+
+                <label for="formation">Formation suivie :</label>
+                <select id="formation" name="formation" required>
+                    <option value="CDA">Concepteur Développeur d'Applications</option>
+                    <option value="DWWM">DWWM</option>
+                    <option value="TSSR">TSSR</option>
+                </select>
+            </fieldset>
+
+
+            <!--===================================================================================================================-->
+            <!-- Choix de Radio Buttons -->
+            <label>
+                <input type="radio" id="oui" name="choice" value="fieldset1" onclick="toggleFieldset('fieldset1')" checked> Un jour au moins--- 
+            </label>
+
+            <label>
+                <input type="radio" id="non" name="choice" value="fieldset2" onclick="toggleFieldset('fieldset2')"> Plus d'un jour ----
+            </label>
+
+            <!-- Fieldsets à afficher -->
+            <fieldset id="fieldset1">
+
+                <legend>Demande de l'autorisation de s'absenter du centre</legend>
+                <label for="datejour">Sélectionnez une date :</label>
+                <input type="date" id="datejour" name="datejour"><br><br>
+
+                <label for="debut-heure">De:</label>
+                <input type="time" id="debut-heure" name="debut-heure" min="08:00" max="17:00" required /><br><br>
+
+                <label for="fin-heure">A:</label>
+                <input type="time" id="fin-heure" name="fin-heure" min="08:00" max="17:00" required />
+            </fieldset>
+
+            <fieldset id="fieldset2">
+                <legend>Demande de l'autorisation de s'absenter du centre</legend>
+
+                <label for="datejourdebut">Du:</label>
+                <input type="date" id="datejourdebut" name="datejourdebut" required><br><br>
+
+                <label for="datejourfin">Au :</label>
+                <input type="date" id="datejourfin" name="datejourfin" required><br><br>
+            </fieldset>
+
+
+            <fieldset id="liste-formulaires">
+
+            </fieldset>
+            <button onclick="myFunction()" type="submit"> submit </button>
+        </form>
+        <!-- Inclusion des fichiers JavaScript externes -->
+        <script src="page1js/parametres.js" ></script>
+        <script src="page1js/fieldset.js" ></script>
+        <script src="page1js/formulaire.js" ></script>
+        <script src="page1js/validation.js" ></script>
+    </body>
+</html>
+
